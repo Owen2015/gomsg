@@ -2,12 +2,40 @@
 	<head></head>
 	<body> 
 		<h1> stock market</h1>	
+		<!--
+		<div id="control">
+			<span>server uri :<span>	<input type="textarea" id="server"></input>
+					<br><input type="button" id="connectButton" value="connect" onClick="toggleConnect()"></input>
+		</div>
+		-->
 		<div id="text" class="text"></div>	
 	
 	</body>
 	<script>
+/*
+	var ws;
+	var connectFlag=false;
+	function toggleConnect(){
+		if(connectFlag==false){
+			console.log(document.getElementById("server").value);
+			console.log("servername: "+location.host);
+			ws=new WebSocket("ws://"+document.getElementById("server").value);
+			ws.addEventListener('message', function(e) {
+				document.getElementById("text").innerHTML=e.data;
+			});
+			connectFlag=true;
+			document.getElementById("connectButton").value="disconnect";
+		}
+		else{
+			ws.close();
+			connectFlag=false;
+			document.getElementById("connectButton").value="connect";
+		}
+	}
+	*/
+
 	(function (){
-		 var ws = new WebSocket("ws://localhost:3000/sender");
+		 var ws = new WebSocket("ws://"+location.host+"/sender");
 		//ws.addEventListener('message', function(e) { console.log(e);});
 		ws.addEventListener('message', function(e) { 
 			document.getElementById("text").innerHTML=e.data;	
@@ -16,5 +44,6 @@
 		});
 
 	})();
+
 	</script>
 </html>
