@@ -12,11 +12,14 @@ this project is writen in go, so  you may need to set up the go environment firs
 ### docker deploy
 add docker deploy support recently.
 1. using " git clone git@github.com:Owen2015/gomsg.git" to clone the source in your go workspace in an appropriate package.
-2. cd gomsg directory, build docker image using "docker build -t gomsg ."
-3. runing the service using "docker run -d -p 3000:3000 gomsg".
+2. Modify the "Dockerfile" in the "gomsg" directory, change the "WORKDIR" to your actual place. 
+3. cd gomsg directory, build docker image using "docker build -t gomsg ."
+4. runing the service using "docker run -d -p 3000:3000 gomsg".
 That's it, docker really make things easier.
 
 ###  linux deploy
+you may want to use docker deploy because it is much easier. But in case you don't want to do that, following below instructions to deploy manually.
+
 #### Go download and install
 1. you need to download Go and install it, using "wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz" to download Go.
 2. install Go using "tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz"
