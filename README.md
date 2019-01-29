@@ -8,6 +8,14 @@ it will receive data sent from some stock data generator and push data to client
 
 ## deploy
 this project is writen in go, so  you may need to set up the go environment first.
+
+### docker deploy
+add docker deploy support recently.
+1. using " git clone git@github.com:Owen2015/gomsg.git" to clone the source in your go workspace in an appropriate package.
+2. cd gomsg directory, build docker image using "docker build -t gomsg ."
+3. runing the service using "docker run -d -p 3000:3000 gomsg".
+That's it, docker really make things easier.
+
 ###  linux deploy
 #### Go download and install
 1. you need to download Go and install it, using "wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz" to download Go.
@@ -35,4 +43,5 @@ enter you go workspace and using command "go get github.com/gorilla/websocket" t
 3. Enter go workspace and using "go install yourpackagepath/gomsg" to install it.
 4. Now there should be a gomsg executable file in you bin folder. Using "./bin/gomsg" to run it
 5. Open browser and enter "http://localhost:3000/" and you can access the stock data in real time.
+
 
