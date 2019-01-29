@@ -63,7 +63,7 @@ go func () {
 }   
 
 func indexHandler(w http.ResponseWriter, r *http.Request){
-	t,_:=template.ParseFiles("src/github.com/owen2015/gomsg/web/index.html")
+	t,_:=template.ParseFiles("/go/src/github.com/owen2015/gomsg/web/index.html")
 	t.Execute(w,nil)
 }
 
